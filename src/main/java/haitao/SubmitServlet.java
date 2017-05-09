@@ -46,7 +46,7 @@ public class SubmitServlet extends HttpServlet {
 		JSONArray orgArray = new JSONArray();
 		JSONObject haitaoOrg = new JSONObject();
 		
-		
+		System.out.println(type);
 		if(type.equalsIgnoreCase("list")){
 			InputStream in = null;
 			try{
