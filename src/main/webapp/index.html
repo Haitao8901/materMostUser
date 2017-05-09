@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>AddUser</title>
+    <style type="text/css">
+     table{
+     	border:none;
+     }
+     input[name=submit]{
+     	color:blue;
+     	background-color:gray;
+     	border:none;
+     	border-radius:4px;
+     	cursor:pointer;
+     }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$('input[name=submit]').on('click', function(event){
+    			var name = $('input[name=username]').val();
+    			var id = $('input[name=userid]').val();
+    			$.ajax({
+    				type:'get',
+    				url:'submitUser?name='+name+'&id='+id,
+    				async: true,
+    				success:function(){
+    					alert('submit success!');
+    					$('input[name^=user]').val('');
+    				},
+    				error:function(){}
+    			});
+    		});
+    	});
+    </script>
+</head>
+<body>
+    <div align='center'>
+    	<table>
+    		<tr>
+    			<td>
+    				<label>UserName</label>
+    			</td>
+    			<td>
+    				<input type="text" name='username' value=''>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				<label>UserID</label>
+    			</td>
+    			<td>
+    				<input type="text" name='userid' value=''>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan='2' align='center'><input type="button" name='submit' value='SUBMIT'></td>
+    		</tr>
+    	</table>
+    </div>
+</body>
+</html>
