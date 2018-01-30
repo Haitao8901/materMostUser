@@ -4,10 +4,10 @@
 		<display-name>SubmitServlet</display-name>
 		<servlet-name>SubmitServlet</servlet-name>
 		<servlet-class>haitao.SubmitServlet</servlet-class>
-		<init-param>
-			<param-name>filePath</param-name>
-			<param-value>D:\haitaoCfg</param-value>
-		</init-param>
+<!-- 		<init-param> -->
+<!-- 			<param-name>filePath</param-name> -->
+<!-- 			<param-value>D:\haitaoCfg\</param-value> -->
+<!-- 		</init-param> -->
 		<init-param>
 			<param-name>userfile</param-name>
 			<param-value>mmUserFile.properties</param-value>

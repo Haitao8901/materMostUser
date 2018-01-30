@@ -30,12 +30,27 @@
     				error:function(){}
     			});
     		});
+    		
+    		$('input[name=tsubmit]').on('click', function(event){
+    			var name = $('input[name=teachername]').val();
+    			var id = $('input[name=teacherid]').val();
+    			$.ajax({
+    				type:'get',
+    				url:'submitUser?type=addTeacher&name='+name+'&id='+id,
+    				async: true,
+    				success:function(){
+    					alert('submit success!');
+    					$('input[name^=teacher]').val('');
+    				},
+    				error:function(){}
+    			});
+    		});
     	});
     </script>
 </head>
 <body>
     <div align='center'>
-    	<table>
+    	<table style="display:box;">
     		<tr>
     			<td>
     				<label>UserName</label>
@@ -54,6 +69,32 @@
     		</tr>
     		<tr>
     			<td colspan='2' align='center'><input type="button" name='submit' value='SUBMIT'></td>
+    		</tr>
+    	</table>
+    	<table>
+    		<tr>
+    			<td>
+    				<label>UserName</label>
+    			</td>
+    			<td>
+    				<input type="text" name='teachername' value=''>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan='2'>
+    				Formater:${id}|${username}|${email}
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    				<label>UserID</label>
+    			</td>
+    			<td>
+    				<input type="text" name='teacherid' value=''>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan='2' align='center'><input type="button" name='tsubmit' value='SUBMIT'></td>
     		</tr>
     	</table>
     </div>

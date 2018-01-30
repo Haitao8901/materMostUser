@@ -33,15 +33,6 @@ public class SubmitServlet extends HttpServlet {
      */
     public SubmitServlet() {
         super();
-		if(filePath == null){
-			filePath = this.getInitParameter("filePath") == null? this.getServletContext().getContextPath() +"/WEB-INF/" : this.getInitParameter("filePath");
-		}
-		if(userFileName == null){
-			userFileName = this.getInitParameter("userfile") == null? "mmUserFile.properties" : this.getInitParameter("userfile");
-		}
-		if(agentFileName == null){
-			agentFileName = this.getInitParameter("agentfile") == null? "mmAgentFile.properties" : this.getInitParameter("agentfile");
-		}
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,6 +40,16 @@ public class SubmitServlet extends HttpServlet {
 		String id = request.getParameter("id")==null?"":request.getParameter("id");
 		String type = request.getParameter("type")==null?"":request.getParameter("type");
 
+		if(filePath == null){
+			filePath = this.getInitParameter("filePath") == null? this.getServletContext().getRealPath("") +"/WEB-INF/" : this.getInitParameter("filePath");
+		}
+		if(userFileName == null){
+			userFileName = this.getInitParameter("userfile") == null? "mmUserFile.properties" : this.getInitParameter("userfile");
+		}
+		if(agentFileName == null){
+			agentFileName = this.getInitParameter("agentfile") == null? "mmAgentFile.properties" : this.getInitParameter("agentfile");
+		}
+		
 		JSONObject result = new JSONObject();
 		JSONObject status = new JSONObject();
 		
@@ -94,7 +95,7 @@ public class SubmitServlet extends HttpServlet {
 				prop.load(in);
 				Iterator<String> it=prop.stringPropertyNames().iterator();
 				while(it.hasNext()){
-					String[] values = prop.getProperty(it.next()).split("|");
+					String[] values = prop.getProperty(it.next()).split("\\|");
 					//id,username,email
 					JSONObject teacher = new JSONObject();
 					teacher.put("id", values[0]);
