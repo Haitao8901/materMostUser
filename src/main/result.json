@@ -1,0 +1,20 @@
+{
+	"status": {
+		"code": "0000",
+		"text": "successfully!"
+	},
+	"body": {
+		"agents": [
+			{
+				"email": "testxxx@cyberobject.com",
+				"id": "op8t95cdutfrdxiz6srb96xspy",
+				"nickname": "",
+				"roles": "system_user",
+				"username": "testxxx",
+				"status": "offline",
+				"lastActivityAt": 1515110391855,
+				"language": "en"
+			}
+		]
+	}
+}

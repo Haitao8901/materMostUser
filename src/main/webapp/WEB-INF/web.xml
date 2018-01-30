@@ -6,7 +6,15 @@
 		<servlet-class>haitao.SubmitServlet</servlet-class>
 		<init-param>
 			<param-name>filePath</param-name>
-			<param-value>D:\mmUserFile.properties</param-value>
+			<param-value>D:\haitaoCfg</param-value>
+		</init-param>
+		<init-param>
+			<param-name>userfile</param-name>
+			<param-value>mmUserFile.properties</param-value>
+		</init-param>
+		<init-param>
+			<param-name>agentfile</param-name>
+			<param-value>mmAgentFile.properties</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
